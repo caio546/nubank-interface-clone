@@ -46,7 +46,7 @@ export default function Main() {
         opened = true;
       } else {
         translateY.setValue(offset);
-        translateY.setOffset(offset);
+        translateY.setOffset(0);
         offset = 0;
       }
 
