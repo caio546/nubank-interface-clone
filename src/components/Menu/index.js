@@ -27,7 +27,7 @@ export default function Menu({translateY}) {
           value="https://nubank.com.br"
           size={80}
           fgColor="#fff"
-          bgColor="#8b10ae"
+          bgColor="#8a05be"
         />
       </Code>
 
