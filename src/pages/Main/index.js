@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {Animated} from 'react-native';
 import {PanGestureHandler, State} from 'react-native-gesture-handler';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import Header from '~/components/Header';
 import Tabs from '~/components/Tabs';
@@ -63,46 +64,48 @@ export default function Main() {
   }
 
   return (
-    <Container>
-      <Header />
+    <SafeAreaProvider>
+      <Container>
+        <Header />
 
-      <Content>
-        <Menu translateY={translateY} />
+        <Content>
+          <Menu translateY={translateY} />
 
-        <PanGestureHandler
-          onGestureEvent={animatedEvent}
-          onHandlerStateChange={onHandlerStateChanged}>
-          <Card
-            style={{
-              transform: [
-                {
-                  translateY: translateY.interpolate({
-                    inputRange: [-350, 0, 380],
-                    outputRange: [-50, 0, 380],
-                    extrapolate: 'clamp',
-                  }),
-                },
-              ],
-            }}>
-            <CardHeader>
-              <Icon name="attach-money" size={20} color="#666" />
-              <Icon name="visibility-off" size={20} color="#666" />
-            </CardHeader>
-            <CardContent>
-              <Title>Saldo disponível</Title>
-              <Description>R$ 197.611,65</Description>
-            </CardContent>
-            <CardFooter>
-              <Annotation>
-                Transferência de R$ 20,00 recebida de Milena Souza Ferreira hoje
-                às 06:00h;
-              </Annotation>
-            </CardFooter>
-          </Card>
-        </PanGestureHandler>
-      </Content>
+          <PanGestureHandler
+            onGestureEvent={animatedEvent}
+            onHandlerStateChange={onHandlerStateChanged}>
+            <Card
+              style={{
+                transform: [
+                  {
+                    translateY: translateY.interpolate({
+                      inputRange: [-350, 0, 380],
+                      outputRange: [-50, 0, 380],
+                      extrapolate: 'clamp',
+                    }),
+                  },
+                ],
+              }}>
+              <CardHeader>
+                <Icon name="attach-money" size={20} color="#666" />
+                <Icon name="visibility-off" size={20} color="#666" />
+              </CardHeader>
+              <CardContent>
+                <Title>Saldo disponível</Title>
+                <Description>R$ 197.611,65</Description>
+              </CardContent>
+              <CardFooter>
+                <Annotation>
+                  Transferência de R$ 20,00 recebida de Milena Souza Ferreira
+                  hoje às 06:00h;
+                </Annotation>
+              </CardFooter>
+            </Card>
+          </PanGestureHandler>
+        </Content>
 
-      <Tabs translateY={translateY} />
-    </Container>
+        <Tabs translateY={translateY} />
+      </Container>
+    </SafeAreaProvider>
   );
 }
