@@ -6,7 +6,7 @@
 
 ***MOBILE***
 <p align="center">
-  <img width="540" src="img/mobile.jpeg">
+  <img width="270" src="img/mobile.jpeg">
 </p>
 
 ## Table of Contents
