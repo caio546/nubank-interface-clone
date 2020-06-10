@@ -1,6 +1,6 @@
 import React from 'react';
 
-import QRCode from 'react-native-qrcode';
+import QRCode from 'react-native-qrcode-svg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
@@ -26,8 +26,8 @@ export default function Menu({translateY}) {
         <QRCode
           value="https://nubank.com.br"
           size={80}
-          fgColor="#fff"
-          bgColor="#8a05be"
+          color="#fff"
+          backgroundColor="#8a05be"
         />
       </Code>
 
